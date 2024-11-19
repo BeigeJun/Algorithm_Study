@@ -1,17 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <iostream>
 #include <math.h>
-struct Point
-{
-    int x;
-    int y;
-};
 
-bool Euclidiean_Distance(Point a, Point b, int r1, int r2)
+bool Euclidiean_Distance(int x1, int y1, int x2, int y2, int r1, int r2)
 {
-    double dbDistance = sqrt((b.x - a.x) * (b.x - a.x) +(b.y - a.y) * (b.y - a.y));
+    double dbDistance = sqrt((x2 - x1) * (x2 - x1) +(y2 - y1) * (y2 - y1));
     if (dbDistance >= r1 && dbDistance <= r2)
         return true;
     else
@@ -24,12 +18,7 @@ long long solution(int r1, int r2) {
     {
         for (int j = -r2; j <= r2; j++)
         {
-            Point PMade, PCenter;
-            PMade.x = i;
-            PMade.y = j;
-            PCenter.x = 0;
-            PCenter.y = 0;
-            if(Euclidiean_Distance(PMade, PCenter,r1,r2))
+            if(Euclidiean_Distance(i,j, 0,0,r1,r2))
                 answer+=1;
         }
     }
